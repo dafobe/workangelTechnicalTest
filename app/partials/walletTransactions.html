@@ -1,0 +1,26 @@
+<div class="panel-heading">Wallet Transactions</div>
+      <div class="panel-body">
+        <div ng-show="!wallet.transactions.length"> Currently there aren't wallet transactions to show</div>
+        <ul class="list-group" ng-show="wallet.transactions.length">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <th>date</th>
+                <th>amount</th>
+                <th>currency</th>
+                <th>amount {{wallet.currency}}</th>
+                <th>action</th>
+              </thead>
+              <tbody>
+                <tr ng-repeat="transaction in wallet.transactions track by $index">
+                  <td>{{transaction.creationDate | date:"short"}}</td>
+                  <td>{{transaction.amount | currency:transaction.currency}}</td>
+                  <td>{{transaction.currency}}</td>
+                  <td>{{transaction.amount | currency:wallet.currency }}</td>
+                  <td>{{transactionCtrl.actionName(transaction.action)}}</td>
+                </tr> 
+              </tbody>
+            </table>
+          </div>
+        </ul>
+      </div>

@@ -1,0 +1,19 @@
+{
+  "version": "0.0.0",
+  "private": false,
+  "name": "angularjsTest",
+  "description": "A tutorial application for AngularJS",
+  "repository": "https://github.com/dafobe/angularjsTest/",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.6.1",
+    "shelljs": "^0.2.6"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8000",
+
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update"
+  }
+}

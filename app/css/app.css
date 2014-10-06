@@ -1,0 +1,19 @@
+body { 
+	/* due to fixed header*/
+	padding-top: 30px; 
+}
+@media all and (max-width: 768px) {
+  body { 
+	/* if is collapsed (mobile) applies more padding*/
+	padding-top: 165px; 
+}
+}
+div.clear {
+    clear:both;
+}
+.ng-invalid.ng-dirty{
+	border-color:red;
+}
+.ng-valid.ng-dirty {
+	border-color:green;
+}

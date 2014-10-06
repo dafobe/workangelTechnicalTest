@@ -1,0 +1,35 @@
+<div class="panel-heading">Submit a new amount operation</div>
+ <div class="panel-body">
+    <form role="form" 
+          name="amountForm"
+          ng-controller="AmountController as amount"
+          novalidate
+          >
+      <div class="form-group">
+        
+        <select class="form-control" 
+                ng-controller="CurrencyController as currency" 
+                ng-model="amount.currency"
+                required>
+          <option value="">Select the amount currency</option> 
+          <option ng-repeat="c in currency.currencies" value="{{c.code}}">{{c.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <div class="">current amount {{amount.amount | currency:amount.currency}}:</div> 
+        <div class="input-group">
+          <span class="input-group-addon">{{amount.currency}}</span>
+          <input ng-model="amount.amount" 
+                ng-disabled="!amount.currency"
+                type="number" class="form-control" placeHolder="Set the Amount" required min=0.1>
+          <span class="input-group-addon">.00</span>
+        </div>  
+      </div>     
+      <button type="submit" 
+              ng-click="amountForm.$valid && amount.submitAmount(wallet,'add')" 
+              action="add" class="btn btn-success">Add</button>
+      <button type="submit"
+              ng-click="amountForm.$valid && amount.submitAmount(wallet,'remove')" 
+              action="remove" class="btn btn-danger" onClick>Remove</button>
+    </form>
+ </div>

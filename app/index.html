@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="walletManager">
+  <head>
+    <meta charset="utf-8">
+    <title>Work Angel Wallet</title>
+    <link rel="stylesheet" href="libraries/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="libraries/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-controller="WalletController as wallet">
+    <section class="top menu">
+      <wallet-menu></wallet-menu>
+    </section>
+    
+    
+      <!-- Wallet currency form-->
+    <section >
+      <wallet-currency class="panel panel-default"></wallet-currency>
+    </section>
+    <!-- New Amount form -->
+    <section  >
+       <amount-form class="panel panel-default"></amount-form>
+    </section>
+    <!-- Successful transactions list -->
+    <section >
+      <wallet-transactions ng-controller="TransactionsController as transactionCtrl" class="panel panel-success"></wallet-transactions>
+    </section>
+    <section>
+      <wallet-totals class="panel panel-primary" ng-controller="CurrencyController as currency"></wallet-totals>
+    </section>
+    
+    
+  </body>
+</html>

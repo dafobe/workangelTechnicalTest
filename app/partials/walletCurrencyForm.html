@@ -1,0 +1,9 @@
+<div class="panel-heading">Select the Wallet Currency</div>
+      <div class="panel-body">
+         <div class="form-group">
+            <select class="form-control" ng-controller="CurrencyController as currency" ng-model="wallet.currency" required>
+              <option value="">Select a currency</option>
+              <option ng-repeat="c in currency.currencies" value="{{c.code}}">{{c.name}} - {{c.symbol}}</option>
+            </select>
+          </div>
+      </div>
